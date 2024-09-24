@@ -3,7 +3,8 @@ import { SlAnchor } from "react-icons/sl";
 // import MyDiv1 from './03/MyDiv1';
 // import Hello from './01/Hello';
 // import Myclock from './02/Myclock';
-import MyList from './04/MyList';
+// import MyList from './04/MyList';
+import Lotto from './05/Lotto';
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
                       flex flex-col justify-center items-center
                       overflow-y-scroll'>
         {/* <MyDiv1 /> */}
-        <MyList />
+        {/* <MyList /> */}
+        <Lotto />
       </main>
       <footer className='w-full h-20
                           flex justify-center items-center 
