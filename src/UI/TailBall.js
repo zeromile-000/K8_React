@@ -2,11 +2,13 @@
 
 export default function TailBall({n}) {
   const ballColor = {
-    'b0' : "bg-red-500",
-    'b1' : "bg-yellow-500",
-    'b2' : "bg-gray-500",
-    'b3' : "bg-green-500",
-    'b4' : "bg-blue-500"
+    'b0': "bg-red-500",
+    'b1': "bg-yellow-500",
+    'b2': "bg-gray-500",
+    'b3': "bg-green-500",
+    'b4': "bg-purple-500", 
+    'b5': "bg-pink-500",
+    'b6': "bg-blue-500"
     
   }
   return (
@@ -15,7 +17,6 @@ export default function TailBall({n}) {
                     rounded-full
                     font-bold
                     ${ballColor['b'+ Math.floor(n / 10)]}
-                    bg-slate-600
                     text-white text-2xl
                     `}> 
       {n}

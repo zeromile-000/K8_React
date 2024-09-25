@@ -4,7 +4,8 @@ import { SlAnchor } from "react-icons/sl";
 // import Hello from './01/Hello';
 // import Myclock from './02/Myclock';
 // import MyList from './04/MyList';
-import Lotto from './05/Lotto';
+// import Lotto from './05/Lotto';
+import FoodMain from './06/FoodMain';
 
 
 function App() {
@@ -27,12 +28,13 @@ function App() {
                       overflow-y-scroll'>
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
-        <Lotto />
+        {/* <Lotto /> */}
+        <FoodMain />
       </main>
       <footer className='w-full h-20
                           flex justify-center items-center 
                           bg-black text-white'>
-        <p className=''>k_dight 8기</p>
+        <p className='text-5x1'>k_dight 8기 😆</p>
       </footer>
 
     </div>

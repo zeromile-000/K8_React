@@ -14,6 +14,7 @@ export default function Lotto() {
       if (!arr.includes(num)) arr.push(num);
     }
     setNumbers(arr);
+    arr.sort((a, b) => a - b);
   }
 
 
@@ -26,10 +27,12 @@ export default function Lotto() {
           <TailBall n={numbers[3]} />
           <TailBall n={numbers[4]} />
           <TailBall n={numbers[5]} />
+          <span className= "text-4xl">➕</span>
           <TailBall n={numbers[6]} />
+
         </div>
         <div className="w-full flex justify-center items-center mb-10">
-          <TailButton caption={'로또번호생성'} color='blue'
+          <TailButton caption={'로또번호생성 🎱'} color='blue'
             handlerClick={handleHclick1} />
         </div>
       </div>
