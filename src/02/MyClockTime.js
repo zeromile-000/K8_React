@@ -23,7 +23,7 @@ function MyclockTime() {
     }, 1000);
 
     // 컴포넌트가 언마운트될 때 타이머를 정리
-    return () => clearInterval(timer);
+    return () => clearInterval(timer); // 클리어 하기 전까지는 계속 돈다.
   }, []);
 
   return (

@@ -5,35 +5,30 @@ import { SlAnchor } from "react-icons/sl";
 // import Myclock from './02/Myclock';
 // import MyList from './04/MyList';
 // import Lotto from './05/Lotto';
-import FoodMain from './06/FoodMain';
+// import FoodMain from './06/FoodMain';
+import Myclock from './02/Myclock';
 
 
 function App() {
   
   return (
-    <div className="w-full x1:w-10/12  h-screen mx-auto
-                    flex flex-col justify-center items-center">
-      <header className='w-full h-20
-                          flex justify-between items-center 
-                          bg-slate-200'>
-        <p className='text-2xl font-bold p-5'>
+    <div className="flex flex-col items-center justify-center w-full h-screen mx-auto x1:w-10/12">
+      <header className='flex items-center justify-between w-full h-20 bg-slate-200'>
+        <p className='p-5 text-2xl font-bold'>
           👨🏻‍🎓 K8_React 준영의 블로그
           </p>
-        <p className='text-5xl font-bold p-5'>
+        <p className='p-5 text-5xl font-bold'>
           <SlAnchor />
           </p>
       </header>
-      <main className='w-full grow 
-                      flex flex-col justify-center items-center
-                      overflow-y-scroll'>
+      <main className='flex flex-col items-center w-full overflow-y-scroll grow'>
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
         {/* <Lotto /> */}
-        <FoodMain />
+        {/* <FoodMain /> */}
+        <Myclock/>
       </main>
-      <footer className='w-full h-20
-                          flex justify-center items-center 
-                          bg-black text-white'>
+      <footer className='flex items-center justify-center w-full h-20 text-white bg-black'>
         <p className='text-5x1'>k_dight 8기 😆</p>
       </footer>
 
