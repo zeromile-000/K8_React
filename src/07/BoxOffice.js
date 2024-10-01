@@ -3,6 +3,7 @@ import BoxOffice_tr from "./BoxOffice_tr";
 
 export default function BoxOffice() {
   const [tdata, setTdata] = useState([]);
+  const [info, setInfo] = useState([]);
   const [trs, setTrs] = useState([]);
 
   const getFetchData = () => {
@@ -24,6 +25,8 @@ export default function BoxOffice() {
 
   const handleTrClick = (item) => {
     console.log("handleTrClick =", item);
+    let tm = `[${item.movieCd}] ${item.movieNm} : 누적 관계수 ${parseInt(item.audiCnt).toLocaleString()} 명 입니다.`;
+    setInfo(tm);
   };
 
   // 맨 처음 한 번 실행
@@ -36,11 +39,7 @@ export default function BoxOffice() {
     if (tdata.length === 0) return; // tdata가 비어있으면 리턴
     console.log("tdata =", tdata);
     let tm = tdata.map(item => (
-      <BoxOffice_tr
-        handleClick={() => handleTrClick(item)}
-        mv={item}
-        key={item.movieCd}
-      />
+      <BoxOffice_tr handleClick={() => handleTrClick(item)} mv={item} key={item.movieCd} />
     ));
     setTrs(tm);
   }, [tdata]);
@@ -60,6 +59,11 @@ export default function BoxOffice() {
         <tbody>
           {trs}
         </tbody>
+        <tfoot>
+          <tr className="w-full h-10 p-2 text-center text-white bg-black"> 
+            <td colSpan={5} > {info} </td>
+          </tr>  
+        </tfoot>
       </table>
     </div>
   );

@@ -7,7 +7,9 @@ import { SlAnchor } from "react-icons/sl";
 // import Lotto from './05/Lotto';
 // import FoodMain from './06/FoodMain';
 // import Myclock from './02/Myclock';
-import BoxOffice from './07/BoxOffice';
+// import BoxOffice from './07/BoxOffice';
+// import MyBoxBox from './08/MyBoxBox';
+import MyBox from './08/MyBox';
 
 
 function App() {
@@ -28,7 +30,9 @@ function App() {
         {/* <Lotto /> */}
         {/* <FoodMain /> */}
         {/* <Myclock/> */}
-        <BoxOffice/>
+        {/* <BoxOffice/> */}
+        <MyBox/>
+        {/* <MyBoxBox/> */}
       </main>
       <footer className='flex items-center justify-center w-full h-20 text-white bg-black'>
         <p className='text-5x1'>k_dight 8기 😆</p>
