@@ -10,7 +10,8 @@ import { SlAnchor } from "react-icons/sl";
 // import BoxOffice from './07/BoxOffice';
 // import MyBoxBox from './08/MyBoxBox';
 // import MyBox from './08/MyBox';
-import Traffic from './09/Traffic';
+// import Traffic from './09/Traffic';
+import MyRef from './10/MyRef';
 
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
         {/* <BoxOffice/> */}
         {/* <MyBox/> */}
         {/* <MyBoxBox/> */}
-        <Traffic />
+        {/* <Traffic /> */}
+        <MyRef />
       </main>
       <footer className='flex items-center justify-center w-full h-20 text-white bg-black'>
         <p className='text-5x1'>k_dight 8기 😆</p>
