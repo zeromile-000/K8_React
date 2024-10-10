@@ -1,6 +1,6 @@
 
 
-export default function TailButton({caption, color,handlerClick}) {
+export default function TailButton({caption, color,handlerClick, size}) {
   const btColor = {
     'blue' : 'bg-blue-300',
     'orange' : 'bg-orange-800',
@@ -20,6 +20,7 @@ export default function TailButton({caption, color,handlerClick}) {
                         ${btColor[color]} text-white
                         ${btColorHover[color]} font-bold
                         rounded-md
+                        ${size ? size : ''}
                           `}
                           onClick={handlerClick}>
         {caption}

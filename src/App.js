@@ -1,3 +1,4 @@
+import Gallery from './11/Gallery';
 import './App.css';
 import { SlAnchor } from "react-icons/sl";
 // import MyDiv1 from './03/MyDiv1';
@@ -11,7 +12,8 @@ import { SlAnchor } from "react-icons/sl";
 // import MyBoxBox from './08/MyBoxBox';
 // import MyBox from './08/MyBox';
 // import Traffic from './09/Traffic';
-import MyRef from './10/MyRef';
+// import MyRef from './10/MyRef';
+import Festival from './12/Festival';
 
 
 function App() {
@@ -36,9 +38,11 @@ function App() {
         {/* <MyBox/> */}
         {/* <MyBoxBox/> */}
         {/* <Traffic /> */}
-        <MyRef />
+        {/* <MyRef /> */}
+        {/* <Gallery /> */}
+        <Festival />
       </main>
-      <footer className='flex items-center justify-center w-full h-20 text-white bg-black'>
+      <footer className='flex items-center justify-center flex-shrink-0 w-full h-20 text-white bg-black'>
         <p className='text-5x1'>k_dight 8기 😆</p>
       </footer>
 
