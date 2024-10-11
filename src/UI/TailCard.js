@@ -17,7 +17,7 @@ export default function TailCard({ imgUrl, title, content, kw }) {
 
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-      <img className="h-24 rounded-t-lg"
+      <img className="w-full rounded-t-lg h-52"
         src={imgUrl}
         alt="" />
       <div className="p-5">

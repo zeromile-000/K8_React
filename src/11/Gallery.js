@@ -2,10 +2,8 @@ import TailCard from "../UI/TailCard";
 import TailButton from "../UI/TailButton";
 import { useEffect, useRef, useState } from "react";
 export default function Gallery() {
-
   const [tdata, setTdata] = useState([]);
   const [tags, setTags] = useState([]);
-
   const x = useRef();
 
   const getFetchData = async () => {
@@ -13,31 +11,31 @@ export default function Gallery() {
     const keyword = encodeURI(x.current.value);
 
     let url = `https://apis.data.go.kr/B551011/PhotoGalleryService1/gallerySearchList1?`;
-    url = `${url}serviceKey=${apikey}&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&`;
-    url = `${url}keyword=${keyword}&_type=json`;
+    url = `${url}serviceKey=${apikey}&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A`;
+    url = `${url}&keyword=${keyword}&_type=json`;
+
     console.log(url);
 
     // fetch(url)
-    // .then(resp => resp.json())
-    // .then(data => console.data)
-    // .catch(err => console.error(err));
+    //   .then(resp => resp.json())
+    //   .then(data => console.log(data))
+    //   .catch(err => console.error(err)) ;
 
     const resp = await fetch(url);
     const data = await resp.json();
-    console.log("getFetch: ", data.response.body.items.item);
+    console.log("getFetch:", data.response.body.items.item);
     setTdata(data.response.body.items.item);
   }
 
-
-  const handleok = () => {
+  const handleOk = () => {
     if (x.current.value === '') {
       alert('키워드를 입력하세요.');
       x.current.focus();
       return;
     }
+
     getFetchData();
   }
-
 
   const handleCancel = () => {
     x.current.value = '';
@@ -55,11 +53,11 @@ export default function Gallery() {
       imgUrl={item.galWebImageUrl}
       title={item.galTitle}
       content={item.galPhotographyLocation}
-      kw={item.galSearchKeyword} />);
+      kw={item.galSearchKeyword} />
 
-    setTags(tm)
+    );
+    setTags(tm);
   }, [tdata]);
-
 
   return (
     <div className="flex flex-col items-center justify-center w-full">
@@ -76,7 +74,7 @@ export default function Gallery() {
           <div className="flex items-center justify-center lg:justify-start">
             <TailButton caption='확인'
               color='blue'
-              handlerClick={handleok}
+              handlerClick={handleOk}
               size='w-1/2' />
             <TailButton caption='취소'
               color='blue'
@@ -85,9 +83,10 @@ export default function Gallery() {
           </div>
         </div>
       </div>
-      <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="grid w-10/12 grid-cols-1 gap-2 p-2 lg:grid-cols-2 xl:grid-cols-3">
         {tags}
       </div>
+
     </div>
   )
 }
