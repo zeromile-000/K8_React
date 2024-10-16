@@ -3,38 +3,46 @@ import TailBall from "../UI/TailBall"
 import TailButton from "../UI/TailButton"
 
 export default function Lotto() {
-  const [numbers, setNumbers] = useState([]);
+  //state변수는 useState Hook으로 만듬
+  const [tags, setTags] = useState();
 
+  const handleClick = () => {
+    let arr = [] ;
 
-  const handleHclick1 = () => {
-    console.log('handleHclick1')
-    let arr = [];
-    while (arr.length < 7) {
-      let num = Math.floor(Math.random() * 45) + 1;
-      if (!arr.includes(num)) arr.push(num);
+    while(arr.length < 7) {
+      let n = Math.floor(Math.random() * 45) + 1 ; //1~45 랜덤수 생성
+
+      if (!arr.includes(n)) arr.push(n) ;
     }
-    setNumbers(arr);
+    
+    //보너스 번호 
+    const bonus = arr.splice(-1) ;
+    //번호 정렬
     arr.sort((a, b) => a - b);
+
+    //보너스 번호 추가
+    arr = arr.concat(bonus) ;
+
+    //볼만들기
+    let tm = arr.map(item => <TailBall  key={'b'+ item} 
+                                        n={item}/>);
+
+    //plus기호 넣기
+    tm.splice(6,0, <div className="mx-2 text-3xl font-bold" key="sp">+</div>)                                    
+    console.log(tm)
+    setTags(tm);
   }
 
-
-    return (
-      <div className=" w-full">
-        <div className="w-full flex justify-center items-center mb-10">
-          <TailBall n={numbers[0]} />
-          <TailBall n={numbers[1]} />
-          <TailBall n={numbers[2]} />
-          <TailBall n={numbers[3]} />
-          <TailBall n={numbers[4]} />
-          <TailBall n={numbers[5]} />
-          <span className= "text-4xl">➕</span>
-          <TailBall n={numbers[6]} />
-
-        </div>
-        <div className="w-full flex justify-center items-center mb-10">
-          <TailButton caption={'로또번호생성 🎱'} color='blue'
-            handlerClick={handleHclick1} />
-        </div>
+  return (
+    <div className="w-full">
+      <div className="flex items-center justify-center w-full mb-10">
+        {tags}       
+      </div>     
+      <div className="flex items-center justify-center w-full mb-10">
+        <TailButton caption='로또번호생성' 
+                    color='blue' 
+                    handlerClick = {handleClick} /> 
       </div>
-    )
+    </div>
+  )
   }

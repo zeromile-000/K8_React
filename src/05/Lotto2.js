@@ -29,17 +29,17 @@ export default function Lotto() {
                                         n={item}/>);
 
     //plus기호 넣기
-    tm.splice(6,0, <div className="text-3xl mx-2 font-bold" key="sp">+</div>)                                    
+    tm.splice(6,0, <div className="mx-2 text-3xl font-bold" key="sp">+</div>)                                    
     console.log(tm)
     setTags(tm);
   }
 
   return (
     <div className="w-full">
-      <div className="w-full flex justify-center items-center mb-10">
+      <div className="flex items-center justify-center w-full mb-10">
         {tags}       
       </div>     
-      <div className="w-full flex justify-center items-center mb-10">
+      <div className="flex items-center justify-center w-full mb-10">
         <TailButton caption='로또번호생성' 
                     color='blue' 
                     handleClick = {handleClick} /> 

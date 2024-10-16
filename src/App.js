@@ -15,14 +15,15 @@ import Traffic from './09/Traffic';
 import Gallery from './11/Gallery';
 import Festival from './12/Festival';
 // import RouteMain from './13/RouteMain';
+import Fcst from './14/Fcst';
+import FcstList from './14/FcstList';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 function App() {
-  
   return (
     <BrowserRouter>
-    <div className="flex flex-col items-center justify-center w-full h-screen mx-auto x1:w-10/12">
+    <div className="flex flex-col items-center justify-center w-full h-screen mx-auto xl:w-10/12">
       <header className='flex items-center justify-between w-full h-20 bg-slate-200'>
         <p className='p-5 text-2xl font-bold'>
           👨🏻‍🎓 K8_React 준영의 블로그
@@ -35,12 +36,13 @@ function App() {
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Traffic'>교통사고</Link></li>
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Gallery'>관광지</Link></li>
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Festival'>축제</Link></li>
+          <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/fcst'>일기예보</Link></li>
         </ul>
-        <p className='p-5 text-5xl font-bold'>
-          <Link to='/'> <SlAnchor / > </Link>
+        <p className='p-5 text-4xl font-bold'>
+          <Link to='/'> <SlAnchor /> </Link>
           </p>
       </header>
-      <main className='flex flex-col items-center w-full overflow-y-scroll grow'>
+      <main className='flex flex-col items-center flex-grow w-full overflow-y-auto'>
         <Routes>
           <Route path="/" element={ <Myclock/> } />
           <Route path="/Lotto" element={ <Lotto /> } />
@@ -49,6 +51,8 @@ function App() {
           <Route path="/Traffic" element={ <Traffic /> } />
           <Route path="/Gallery" element={ <Gallery /> } />
           <Route path="/Festival" element={ <Festival /> } />
+          <Route path='/fcst' element={<Fcst />} />
+          <Route path='/fcstlist' element={<FcstList />} />
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
         {/* <Lotto /> */}
