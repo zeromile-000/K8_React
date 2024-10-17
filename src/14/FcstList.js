@@ -16,6 +16,11 @@ const [tdata, setTdata] = useState([]);
 // form 값을 참조하기 위한 useRef 훅
 const selRef = useRef(); // select 요소를 참조하기 위한 ref 변수
 
+// sky 항목
+const sky = {'1': '맑음(🌞)', '3':'구름많음(☁)', '4': '흐림(🌫)'};
+const pty = {'0': '없음', '1':'비(🌧)', '2': '비/눈(☂/❄)', '3': '눈(❄)', '4' : '소나기(🌦)'};
+
+
   // URL의 쿼리 매개변수를 가져오기 위해 useSearchParams 훅 사용
   const [sParams] = useSearchParams();
   const gubun = sParams.get('gubun'); // 'gubun' 쿼리 매개변수 가져오기
@@ -41,7 +46,12 @@ const selRef = useRef(); // select 요소를 참조하기 위한 ref 변수
                             <td>{code.항목명}({item.category})</td>
                             <td>{item.fcstDate.slice(0,4)}.{item.fcstDate.slice(4,6)}.{item.fcstDate.slice(6,8)}</td>
                             <td>{item.fcstTime.slice(0,2)}:{item.fcstTime.slice(2,4)}</td>
-                            <td>{item.fcstValue}{code.단위}</td>
+                            <td>
+                            {
+                              item.category === 'SKY' ? sky[item.fcstValue] : item.category === 'PTY' ? pty[item.fcstValue] : item.fcstValue + code.단위
+                              
+                            }
+                            </td>
                             </tr>);
                             
                             setTrs(tm);
@@ -104,7 +114,7 @@ const selRef = useRef(); // select 요소를 참조하기 위한 ref 변수
 
 <div class="relative overflow-x-auto w-10/12 my-5">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <thead class="text-xs text-yellow-50 font-bold uppercase bg-lime-600 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     항목명

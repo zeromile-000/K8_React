@@ -1,6 +1,6 @@
 import './App.css';
 import { SlAnchor } from "react-icons/sl";
-// import MyDiv1 from './03/MyDiv1';
+import MyDiv1 from './03/MyDiv1';
 // import Hello from './01/Hello';
 import Myclock from './02/Myclock';
 // import MyList from './04/MyList';
@@ -17,6 +17,9 @@ import Festival from './12/Festival';
 // import RouteMain from './13/RouteMain';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
+import RecoilMain from './15/RecoilMain';
+
+
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
@@ -37,6 +40,7 @@ function App() {
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Gallery'>관광지</Link></li>
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Festival'>축제</Link></li>
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/fcst'>일기예보</Link></li>
+          {/* <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/recoil1'>Recoil1</Link></li> */}
         </ul>
         <p className='p-5 text-4xl font-bold'>
           <Link to='/'> <SlAnchor /> </Link>
@@ -53,6 +57,8 @@ function App() {
           <Route path="/Festival" element={ <Festival /> } />
           <Route path='/fcst' element={<Fcst />} />
           <Route path='/fcstlist' element={<FcstList />} />
+          <Route path='/mydiv' element={<MyDiv1 />} />
+          <Route path='/recoil1' element={<RecoilMain />} />
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
         {/* <Lotto /> */}
