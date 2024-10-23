@@ -19,6 +19,7 @@ import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
 // import RecoilMain from './15/RecoilMain';
 import RMain from './15RM/RMain';
+import Rest from './16/Rest';
 
 
 
@@ -40,8 +41,9 @@ function App() {
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/BoxOffice'>준영의 영화예메</Link></li>
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Traffic'>교통사고</Link></li>
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Gallery'>관광지</Link></li>
-          <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Festival'>축제</Link></li>
+          {/* <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/Festival'>축제</Link></li> */}
           <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/fcst'>일기예보</Link></li>
+          <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/rest'>Restfull</Link></li>
           {/* <li className='p-2 mx-4 rounded-md hover:bg-slate-700 hover:text-white'><Link to='/recoil1'>Recoil1</Link></li> */}
         </ul>
         <p className='p-5 text-4xl font-bold'>
@@ -61,6 +63,7 @@ function App() {
           <Route path='/fcstlist' element={<FcstList />} />
           <Route path='/mydiv' element={<MyDiv1 />} />
           <Route path='/rmain' element={<RMain />} />
+          <Route path='/rest' element={<Rest />} />
           {/* <Route path='/recoil1' element={<RecoilMain />} /> */}
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
