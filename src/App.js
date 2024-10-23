@@ -17,7 +17,9 @@ import Festival from './12/Festival';
 // import RouteMain from './13/RouteMain';
 import Fcst from './14/Fcst';
 import FcstList from './14/FcstList';
-import RecoilMain from './15/RecoilMain';
+// import RecoilMain from './15/RecoilMain';
+import RMain from './15RM/RMain';
+
 
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -58,7 +60,8 @@ function App() {
           <Route path='/fcst' element={<Fcst />} />
           <Route path='/fcstlist' element={<FcstList />} />
           <Route path='/mydiv' element={<MyDiv1 />} />
-          <Route path='/recoil1' element={<RecoilMain />} />
+          <Route path='/rmain' element={<RMain />} />
+          {/* <Route path='/recoil1' element={<RecoilMain />} /> */}
         {/* <MyDiv1 /> */}
         {/* <MyList /> */}
         {/* <Lotto /> */}
